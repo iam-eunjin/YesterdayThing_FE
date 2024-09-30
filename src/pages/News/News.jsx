@@ -51,7 +51,7 @@ const News = () => {
         params: {
           country: item === '해외' ? 'kr' : 'us', // 토글된 값에 따라 country 변경
           category: category ? category.toLowerCase() : '',
-          apiKey: 'd50ed0d686d34342a5038b6d2fa4f832',
+          apiKey: 'ea4940aaff9e49ee9430cf7135deae6d',
           pageSize: 100,
         },
       });
