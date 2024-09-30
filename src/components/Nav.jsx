@@ -10,18 +10,21 @@ const navigation = [
   { name: '기술', us: 'technology', kr: 'tech' },
 ];
 
-export default function Nav({ item, setItem }) {
+export default function Nav({ item, setItem, category, setCategory }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const storedItem = localStorage.getItem('item');
+    if (storedItem) {
+      setItem(storedItem);
+    }
+  }, [setItem]);
 
   const toggleItem = () => {
     const newItem = item === '국내' ? '해외' : '국내';
     localStorage.setItem('item', newItem);
-    setItem(newItem); // 부모 컴포넌트에 item 업데이트
+    setItem(newItem);
   };
-
-  const [category, setCategory] = useState(navigation[0].us);
-
-  const currentCategory = navigation.find(nav => nav.us === category || nav.kr.includes(category));
 
   const handleClick = category => {
     setCategory(category);
@@ -32,7 +35,7 @@ export default function Nav({ item, setItem }) {
       <header className="max-w-full px-4 mx-auto mt-2">
         <nav className="flex items-center justify-between w-full">
           <div className="flex items-center">
-            <a href="#" className="-m-1.5 p-1.5">
+            <a href="/" className="-m-1.5 p-1.5">
               <img className="w-24 h-24 mr-4" src={images['logo.png']} alt="logo img" />
             </a>
             {/*토글 동그라미에 가려지는 글자와 동적 효과*/}
@@ -87,15 +90,9 @@ export default function Nav({ item, setItem }) {
             ))}
           </div>
           <div className="hidden lg:flex lg:justify-end">
-            <a href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
-                <path
-                  fillRule="evenodd"
-                  d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </a>
+          <button>
+            <img className="w-9" src={images['web_light_rd_na@3x.png']} alt="login img" />
+          </button>
           </div>
         </nav>
         <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
@@ -129,18 +126,16 @@ export default function Nav({ item, setItem }) {
                   ))}
                 </div>
                 <div className="py-6">
-                  <a
-                    href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base fontBold leading-7 text-gray-900 hover:bg-indigo-900 hover:text-white">
-                    Login
-                  </a>
+                  <button
+                    className="block w-full px-3 py-2 -mx-3 text-base leading-7 text-left text-gray-900 rounded-lg fontBold hover:bg-indigo-900 hover:text-white">
+                    <img className="w-9" src={images['web_light_rd_na@3x.png']} alt="login img" />
+                  </button>
                 </div>
               </div>
             </div>
           </DialogPanel>
         </Dialog>
       </header>
-      <NewsSwitcher item={item} currentCategory={currentCategory} />
     </div>
   );
 }
