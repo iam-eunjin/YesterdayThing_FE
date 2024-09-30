@@ -4,9 +4,9 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-export default function TopUs(props) {
+export default function TopUs({ item, currentCategory }) {
   const [articles, setArticles] = useState([]);
-  const category = props.category;
+  const category = currentCategory.us;
 
   useEffect(() => {
     const fetchTopNews = async () => {
@@ -32,7 +32,7 @@ export default function TopUs(props) {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: true,
+          arrows: true
         },
       },
     ],

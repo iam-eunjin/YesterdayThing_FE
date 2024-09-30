@@ -4,9 +4,9 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-export default function TopKr(props) {
+export default function TopKr({ item, currentCategory }) {
   const [articles, setArticles] = useState([]);
-  const category = props.category;
+  const category = currentCategory.kr;
 
   useEffect(() => {
     const fetchTopNews = async () => {
@@ -33,7 +33,7 @@ export default function TopKr(props) {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: true,
+          arrows: true
         },
       },
     ],
@@ -48,12 +48,12 @@ export default function TopKr(props) {
               <div key={index} className="flex justify-center">
                 <div className="w-full mx-auto">
                   <img
-                    src={article.urlToImage ? article.urlToImage : images['technology.jpg']}
+                    src={article.imageUrl ? article.imageUrl : images['technology.jpg']}
                     alt={article.title}
                     className="object-cover w-5/6 h-64 mx-auto rounded-lg"
                   />
                   <div className="w-5/6 mx-auto mt-2">
-                    <a href={article.url} target="_blank" rel="noopener noreferrer" className="hover:text-indigo-900 ">
+                    <a href={article.contentUrl} target="_blank" rel="noopener noreferrer" className="hover:text-indigo-900 ">
                       {article.title}
                     </a>
                   </div>

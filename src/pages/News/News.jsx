@@ -37,7 +37,7 @@ const News = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
-  const [item, setItem] = useState(localStorage.getItem('item') || '해외'); // 기본값 설정
+  const [item, setItem] = useState(localStorage.getItem('item') || '국내'); // 기본값 설정
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -49,7 +49,7 @@ const News = () => {
     try {
       const response = await axios.get('https://newsapi.org/v2/top-headlines', {
         params: {
-          country: item === '해외' ? 'us' : 'kr', // 토글된 값에 따라 country 변경
+          country: item === '해외' ? 'kr' : 'us', // 토글된 값에 따라 country 변경
           category: category ? category.toLowerCase() : '',
           apiKey: 'd50ed0d686d34342a5038b6d2fa4f832',
           pageSize: 100,
@@ -77,7 +77,7 @@ const News = () => {
 
   const handleCategoryClick = category => {
     const selectedCategory = categories.find(c => c.name === category);
-    const categoryForSearch = item === '해외' ? selectedCategory.us : selectedCategory.kr;
+    const categoryForSearch = item === '해외' ? selectedCategory.kr : selectedCategory.us;
     fetchNews(categoryForSearch);
     setActiveCategory(category);
   };
@@ -151,7 +151,7 @@ const News = () => {
       </Dialog>
 
       {/* 뉴스 컴포넌트 렌더링 */}
-      {item === '국내' ? <NewsKo /> : <NewsUs articles={filteredArticles} onArticleClick={handleArticleClick} />}
+      {item === '국내' ? <NewsUs articles={filteredArticles} onArticleClick={handleArticleClick} /> : <NewsKo />}
     </div>
   );
 };
