@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+<img src="https://github.com/Eureka-Team6/News_FrontEnd/blob/main/src/img/logo.png" width="200" height="200" />
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> 전날의  핫한  뉴스 Top5를  카테고리  별로  제공하는  웹  서비스
 
-## Available Scripts
 
-In the project directory, you can run:
+**개요**
 
-### `npm start`
+☑️ 배경 : 현대 사회에서 매일 쏟아지는 수많은  뉴스 증 가장 중요한 이슈를  빠르게  파악하는 능력이 중요함
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+☑️목적 : 바쁜  일상 속에서 시간과 노력을 절약하며 전날의 주요 이슈를 한눈에 파악할 수 있도록 돕는 것
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+**효과**  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ ☑️ 개인화된 경험 : 사용자 맞춤형 뉴스
+ 
+ ☑️ 실시간 반응 분석
+ 
+ ☑️ 정보 접근성 및 이해도 향상
 
-### `npm run build`
+  
+## 기능
+<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white"> <img src="https://img.shields.io/badge/tailwindcss-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white"> <img src="https://img.shields.io/badge/axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"> <img src="https://img.shields.io/badge/springsecurity-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white"> <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ - 모바일  환경에서도 편리한 반응형  페이지
+ - 토글  전환을  통한  국내 / 해외  뉴스
+ - 관심사  설정  및  검색창
+ - 국내 / 해외 카테고리 별 Top5 뉴스
+ - 구글 소셜 로그인
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## TEAM6
+| 고창준 | 김은진 | 박주광 |
+|--|--|--|
+| 전체 퍼블리싱 및 기능 구현 | 기능 구현 및 에러 해결 | 기능 구현 |
